@@ -66,9 +66,15 @@ class dbHelper {
     final List<Map<String, dynamic>> maps = await db!.query('Book');
     if (maps.isEmpty) return [];
     List<Book> list = List.generate(maps.length, (index) => {
-      return Book(
-        S
-    )
-    })
+      return Book.fromMap(maps[index]);
+    });
+
+    return list;
+  }
+
+  // insert
+  Future<void> insert(Book book) async {
+    final db = await database;
+    book.Seq = await db?.insert('Book', book.toMap());
   }
 }

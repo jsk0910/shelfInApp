@@ -16,6 +16,7 @@ class Book {
   final String? Rating; // Rating value, default is 0
   final String? Reg_Date; // Date of Register
 
+  // initialize
   Book({
     this.Seq,
     this.Title,
@@ -34,7 +35,7 @@ class Book {
     this.Rating,
     this.Reg_Date
 });
-
+  // change to Map
   Map<String, dynamic> toMap() => {
     'SEQ' : this.Seq,
     'Title' : this.Title,
@@ -54,6 +55,7 @@ class Book {
     'Reg_Date' : this.Reg_Date
   };
 
+  // change from Map to Class Book
   Book.fromMap(Map<String, dynamic> map) {
     Seq = map['SEQ'];
     Title = map['TITLE'];
